@@ -7,7 +7,7 @@ extends Area2D
 var timer_duration: float = 1.0 # Duration for the timer (IF NOT EQUAL TO GAMESTATE FADE DURATION ONE WILL COMPLETE BEFORE THE OTHER)
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.name == "Player" and not Gamestate.is_invincible:
 		# Start fade effect & slow time
 		var fade_node = body.get_node("FadetoBlack")
 		if fade_node and fade_node is ColorRect:

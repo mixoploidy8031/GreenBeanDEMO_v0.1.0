@@ -9,12 +9,15 @@ var is_level_finished = false # Triggered by level_finish.gd
 var cannot_move = false
 var alive = true
 
+# DEBUG VARIABLES. DELETE WHEN EXPORTING
+var debug_mode = false
+var is_invincible = false 
+
 func _ready() -> void:
 	set_process(false)
 
 # Update timer based on the global GameState only if game has started
 func _process(delta: float) -> void:
-	
 	if game_started:
 		start_time += delta
 		var seconds = fmod(start_time, 60)
@@ -29,7 +32,7 @@ func start_game() -> void:
 	start_time = 0 
 	set_process(true) # Start updating timer
 
-# Handle level finishing and transitioning
+# Handle level finishing and transitioning (called by level_finish.gd)
 func level_complete():
 	is_level_finished = true
 	
@@ -37,7 +40,6 @@ func level_complete():
 	Music.background_music.seek(0)
 	Music.background_music.volume_db = Music.current_volume
 	Music.background_music.play()
-	Music.background_music.pitch_scale = 0.95
 	
 	#  Calculate next level path
 	var current_scene_file = get_tree().current_scene.scene_file_path 
@@ -48,6 +50,7 @@ func level_complete():
 		freeze_timer()
 		var formatted_time = "%d:%02d" % [int(start_time / 60), int(fmod(start_time, 60))]
 		GlobalUiTime.show_final_message("Final Time: %s" % formatted_time)
+		Music.background_music.pitch_scale = 0.95
 		
 	# Change to the new scene
 	get_tree().change_scene_to_file(next_level_path)
@@ -55,8 +58,6 @@ func level_complete():
 	
 # Reset game variables
 func reset():
-	if not is_level_finished: # DELETE WHEN NEXT LEVEL IS NOT FINAL LEVEL
-		start_time = 0.0
 	Engine.time_scale = 1.0
 	cannot_move = false
 	is_level_finished = false
@@ -65,4 +66,3 @@ func reset():
 func freeze_timer() -> void:
 	game_started = false
 	set_process(false)
-		

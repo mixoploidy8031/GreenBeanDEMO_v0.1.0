@@ -2471,7 +2471,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_26g6g")]
 position = Vector2(-41, -16)
-collision_layer = 6
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -5)
@@ -2993,9 +2992,6 @@ libraries = {
 }
 autoplay = "platmove"
 
-[node name="Key" parent="Platforms" instance=ExtResource("27_dmbc4")]
-position = Vector2(88, -53)
-
 [node name="Signs" type="Node" parent="."]
 
 [node name="SignDouble" parent="Signs" instance=ExtResource("23_wp0pn")]
@@ -3137,6 +3133,9 @@ offset_right = 4.0
 offset_bottom = 15.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Key" parent="." instance=ExtResource("27_dmbc4")]
+position = Vector2(88, -53)
 
 [connection signal="ready" from="GameManager" to="GameManager" method="_on_ready"]
 [connection signal="body_entered" from="Platforms/Platform/MoveRightEnter" to="Platforms/Platform/MoveRightEnter" method="_on_body_entered"]

@@ -7,7 +7,8 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and not Gamestate.is_level_finished:
-		Gamestate.is_level_finished = true
+		
+		Gamestate.is_level_finished = true # Being set true here and in Gamestate. May want to remove and test later
 		
 		# Stop background music with fadeout
 		var music_tween = create_tween()

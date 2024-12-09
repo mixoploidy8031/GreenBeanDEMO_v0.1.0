@@ -21,8 +21,3 @@ func add_point():
 
 func update_score_label():
 	score_label.text =  str(score) + " of " + str(total_coins) + " coins"
-
-func stop_game() -> void:
-	# Call this to pause or stop the game
-	Gamestate.game_started = false
-	set_process(false)

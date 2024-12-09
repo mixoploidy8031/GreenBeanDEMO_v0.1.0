@@ -1206,10 +1206,10 @@ animation = &"idle"
 frame_progress = 0.225985
 
 [node name="AnimatedSprite_Boy" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_h8wnq")
 animation = &"idle"
-frame_progress = 0.870527
 
 [node name="DustFX" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7, -5)
