@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://boh616qq5a5ls"]
+
+[ext_resource type="Script" path="res://scripts/sign_jump.gd" id="1_8ftkb"]
+[ext_resource type="PackedScene" uid="uid://b0gprk03h262j" path="res://scenes/instructions2.tscn" id="1_upsta"]
+
+[node name="jumpintro" type="Area2D"]
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_8ftkb")
+
+[node name="IntroInstructions" parent="." instance=ExtResource("1_upsta")]

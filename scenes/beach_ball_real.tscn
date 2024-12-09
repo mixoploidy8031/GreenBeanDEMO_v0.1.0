@@ -1,0 +1,86 @@
+[gd_scene load_steps=16 format=3 uid="uid://b8i5pwybmg25m"]
+
+[ext_resource type="Script" path="res://scripts/beachball.gd" id="1_3goot"]
+[ext_resource type="Texture2D" uid="uid://q7u43sd06cnf" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_1.png" id="1_x38o0"]
+[ext_resource type="Texture2D" uid="uid://dtt6t24b5w4lf" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_2.png" id="2_whaob"]
+[ext_resource type="Texture2D" uid="uid://b77k468876c77" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_3.png" id="3_osyqv"]
+[ext_resource type="Texture2D" uid="uid://bcqqv44q7koe4" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_4.png" id="4_2nku8"]
+[ext_resource type="Texture2D" uid="uid://b5jelnfuy1284" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_5.png" id="5_e0ow8"]
+[ext_resource type="Texture2D" uid="uid://nv5on2xou2rx" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_6.png" id="6_fjedp"]
+[ext_resource type="Texture2D" uid="uid://h6girwwl6p1n" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_7.png" id="7_ra3ck"]
+[ext_resource type="Texture2D" uid="uid://c4eba3vg6udim" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_8.png" id="8_qwwq6"]
+[ext_resource type="Texture2D" uid="uid://cixu4ahicjawk" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_9.png" id="9_pnhp6"]
+[ext_resource type="Texture2D" uid="uid://colirr23dyhc2" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_10.png" id="10_t0nj7"]
+[ext_resource type="Texture2D" uid="uid://d2y5hgn1as136" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_11.png" id="11_k872r"]
+[ext_resource type="Texture2D" uid="uid://cxtiapsplbovv" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Beach_Ball/Roll/Roll_12.png" id="12_w3gx3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rq30a"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x38o0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_whaob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_osyqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2nku8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e0ow8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fjedp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ra3ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qwwq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pnhp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t0nj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k872r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_w3gx3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1dddi"]
+radius = 7.0
+
+[node name="BeachBallReal" type="Node2D"]
+script = ExtResource("1_3goot")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_rq30a")
+autoplay = "default"
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -2)
+target_position = Vector2(9, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -2)
+target_position = Vector2(-9, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_1dddi")

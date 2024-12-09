@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://vfwnq7r3tvsh"]
+
+[ext_resource type="Script" path="res://scripts/level_finish.gd" id="1_vmg3t"]
+[ext_resource type="AudioStream" uid="uid://cneluvaysro15" path="res://assets/sounds/enter3.wav" id="2_2lqt1"]
+
+[node name="LevelFinish" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_vmg3t")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
+one_shot = true
+
+[node name="LevelFinishSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_2lqt1")
+volume_db = -2.245
+pitch_scale = 0.9
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

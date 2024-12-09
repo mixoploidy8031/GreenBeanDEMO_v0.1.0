@@ -1,0 +1,121 @@
+[gd_scene load_steps=18 format=3 uid="uid://dtoaqp2ipj6e5"]
+
+[ext_resource type="Texture2D" uid="uid://b53cbhfokt7ah" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_F_1.png" id="1_akom0"]
+[ext_resource type="Texture2D" uid="uid://cnjx8ddkn4ffg" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_F_2.png" id="2_oh7cg"]
+[ext_resource type="Texture2D" uid="uid://dkcqkikc1ricb" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_F_3.png" id="3_qj15i"]
+[ext_resource type="Texture2D" uid="uid://b1yafa5pia3fm" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_F_4.png" id="4_5busv"]
+[ext_resource type="Texture2D" uid="uid://cg32tfkljognk" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_L_1.png" id="5_j7dcc"]
+[ext_resource type="Texture2D" uid="uid://r8spd4gybvto" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_L_2.png" id="6_ay3ao"]
+[ext_resource type="Texture2D" uid="uid://cmmac26un3eej" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_L_3.png" id="7_udly4"]
+[ext_resource type="Texture2D" uid="uid://d3i5pmsm0iwun" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_L_4.png" id="8_0hq4t"]
+[ext_resource type="Texture2D" uid="uid://b6113mq1b1803" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_R_1.png" id="9_pi7lb"]
+[ext_resource type="Texture2D" uid="uid://di8blrdwpc6tg" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_R_2.png" id="10_w2hd1"]
+[ext_resource type="Texture2D" uid="uid://blkb01mbq5td4" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_R_3.png" id="11_ort5p"]
+[ext_resource type="Texture2D" uid="uid://cdfqv4qsyfoot" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Balloon/Balloon_4/Idle_1/Idle_1_R_4.png" id="12_484uj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a8nn1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_akom0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oh7cg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qj15i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5busv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j7dcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ay3ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_udly4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0hq4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pi7lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w2hd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ort5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_484uj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_81xvl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_ys1m6"]
+resource_name = "balloon_float"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333, 1.5),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector2(0, 3), Vector2(0, -3), Vector2(0, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvhh3"]
+_data = {
+"RESET": SubResource("Animation_81xvl"),
+"balloon_float": SubResource("Animation_ys1m6")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_emp7v"]
+radius = 7.0
+
+[node name="Balloon" type="Node2D"]
+position = Vector2(0, 3)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(0, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
+sprite_frames = SubResource("SpriteFrames_a8nn1")
+autoplay = "default"
+frame_progress = 0.511587
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D/AnimatedSprite2D"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_mvhh3")
+}
+autoplay = "balloon_float"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_emp7v")

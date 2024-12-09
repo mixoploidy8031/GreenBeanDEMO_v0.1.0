@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci14x8qkaeg6m"]
+
+[ext_resource type="Texture2D" uid="uid://cjwlr13hntacc" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/objects_/staticObjects_.png" id="1_liiov"]
+
+[node name="Spike" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_liiov")
+region_enabled = true
+region_rect = Rect2(48, 96, 8, 16)

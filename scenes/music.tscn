@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvseur0xe2a0"]
+
+[ext_resource type="AudioStream" uid="uid://755aad0c13n4" path="res://assets/sounds/jumpgamedev1 MASTER 1 120bpm.wav" id="1_v43ci"]
+[ext_resource type="Script" path="res://scripts/music.gd" id="2_vwipb"]
+[ext_resource type="AudioStream" uid="uid://bkj7kftki7f1b" path="res://assets/sounds/mainmenumaster1 98bpm.wav" id="3_42w5t"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" node_paths=PackedStringArray("background_music")]
+stream = ExtResource("1_v43ci")
+pitch_scale = 1.14
+attenuation = 1e-05
+panning_strength = 0.0
+bus = &"Music"
+script = ExtResource("2_vwipb")
+background_music = NodePath(".")
+
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_42w5t")
+attenuation = 0.0017003
+panning_strength = 0.0
+bus = &"Music"
+
+[connection signal="ready" from="." to="." method="_on_ready"]

@@ -1,0 +1,153 @@
+[gd_scene load_steps=15 format=3 uid="uid://c6ckbcpmwo6hp"]
+
+[ext_resource type="Texture2D" uid="uid://d4lmq3sm6bysm" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bee/Idle_2/Idle_2_L_1.png" id="1_buoej"]
+[ext_resource type="Texture2D" uid="uid://b6ia0g44bxbfa" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bee/Idle_2/Idle_2_L_2.png" id="2_2wggk"]
+[ext_resource type="Texture2D" uid="uid://csqrr5uxajg0h" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bee/Idle_2/Idle_2_L_3.png" id="3_fe4tf"]
+[ext_resource type="Texture2D" uid="uid://fm556ot7o4nq" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bee/Idle_2/Idle_2_L_4.png" id="4_ecuik"]
+[ext_resource type="Texture2D" uid="uid://k4ea3jn88vdq" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bee/Idle/Idle_5_L_1.png" id="5_omo65"]
+[ext_resource type="Texture2D" uid="uid://cf5bhxhhy74n1" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bee/Idle/Idle_5_L_2.png" id="6_yql0w"]
+[ext_resource type="Texture2D" uid="uid://dw86dndwl2clr" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bee/Idle/Idle_5_L_3.png" id="7_up8jp"]
+[ext_resource type="Texture2D" uid="uid://bltlj2mutswdg" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bee/Idle/Idle_5_L_4.png" id="8_0pmbe"]
+[ext_resource type="AudioStream" uid="uid://tcljff2848wy" path="res://assets/sounds/Honey bee sound effects shorts.mp3" id="9_d4y0h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yiv7y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_buoej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2wggk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fe4tf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ecuik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_omo65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yql0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_up8jp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0pmbe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqsty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_omo65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yql0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_up8jp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0pmbe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_py1dv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.23911]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0.145)]
+}
+
+[sub_resource type="Animation" id="Animation_4e5xs"]
+resource_name = "beemove"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [-0.23911, 0.0872665]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 0.145), Vector2(0, -12.29)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g0jat"]
+_data = {
+"RESET": SubResource("Animation_py1dv"),
+"beemove": SubResource("Animation_4e5xs")
+}
+
+[node name="Bee" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 0.145)
+sprite_frames = SubResource("SpriteFrames_yiv7y")
+autoplay = "default"
+frame_progress = 0.506214
+
+[node name="AnimatedSprite2D_2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-32, -36)
+rotation = -0.23911
+sprite_frames = SubResource("SpriteFrames_dqsty")
+autoplay = "default"
+frame_progress = 0.405447
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D_2"]
+libraries = {
+"": SubResource("AnimationLibrary_g0jat")
+}
+autoplay = "beemove"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_d4y0h")
+volume_db = -10.0
+autoplay = true
+max_distance = 700.0
+attenuation = 2.2974
+bus = &"Misc"

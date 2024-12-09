@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://kx10u4oxaqbv"]
+
+[ext_resource type="PackedScene" uid="uid://darajs3hq18ue" path="res://scenes/plat_bouncingup.tscn" id="1_8xlug"]
+
+[node name="platbouncetest" type="Node2D"]
+
+[node name="plat_bouncingup" parent="." instance=ExtResource("1_8xlug")]

@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://djnwj151u8e0r"]
+
+[ext_resource type="Script" path="res://scripts/global_ui_time.gd" id="1_5xa1v"]
+[ext_resource type="FontFile" uid="uid://dcdcvpqhh54cm" path="res://assets/fonts/bitbybit_ [Font].ttf" id="1_nhjsh"]
+
+[node name="GlobalUI_Time" type="CanvasLayer"]
+script = ExtResource("1_5xa1v")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = 40
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 175.0
+offset_bottom = 75.0
+scale = Vector2(1.00618, 1.03505)
+mouse_filter = 2
+
+[node name="MinutesLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 14.9079
+offset_top = -2.89841
+offset_right = 95.9079
+offset_bottom = -2.89841
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_nhjsh")
+theme_override_font_sizes/font_size = 30
+text = "00:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecondsLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.5892
+offset_top = -2.8984
+offset_right = -5.58923
+offset_bottom = -2.89841
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_nhjsh")
+theme_override_font_sizes/font_size = 30
+text = "33"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalLabel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="FinalLabel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -249.5
+offset_top = 8.0
+offset_right = 249.5
+offset_bottom = 97.0
+grow_horizontal = 2
+
+[node name="FinalTime" type="Label" parent="FinalLabel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_right = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_nhjsh")
+theme_override_font_sizes/font_size = 30
+text = "Final Time 00:33"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="ready" from="." to="." method="_on_ready"]

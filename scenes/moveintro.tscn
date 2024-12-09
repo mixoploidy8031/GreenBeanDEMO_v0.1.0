@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bof5qfh8m0bsq"]
+
+[ext_resource type="Script" path="res://scripts/sign_move.gd" id="1_g1j2d"]
+[ext_resource type="PackedScene" uid="uid://dvq73i8qfqt83" path="res://scenes/instructions.tscn" id="1_rmd24"]
+
+[node name="moveintro" type="Area2D"]
+script = ExtResource("1_g1j2d")
+
+[node name="IntroInstructions" parent="." instance=ExtResource("1_rmd24")]
+z_index = -1

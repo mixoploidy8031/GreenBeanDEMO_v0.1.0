@@ -1,0 +1,77 @@
+[gd_resource type="AudioBusLayout" load_steps=8 format=3 uid="uid://btru4562c16ua"]
+
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_47okw"]
+resource_name = "Limiter"
+threshold_db = -4.7
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n2u6d"]
+resource_name = "Reverb"
+room_size = 0.1
+damping = 0.2
+wet = 0.1
+
+[sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_sew7y"]
+resource_name = "HighPassFilter"
+
+[sub_resource type="AudioEffectHighShelfFilter" id="AudioEffectHighShelfFilter_gu23m"]
+resource_name = "HighShelfFilter"
+
+[sub_resource type="AudioEffectEQ6" id="AudioEffectEQ6_xvtgu"]
+resource_name = "EQ6"
+band_db/32_hz = -34.4
+band_db/100_hz = -16.8
+
+[sub_resource type="AudioEffectHighShelfFilter" id="AudioEffectHighShelfFilter_u4p2t"]
+resource_name = "HighShelfFilter"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_2wgbm"]
+resource_name = "Reverb"
+room_size = 0.2
+wet = 0.1
+
+[resource]
+bus/0/volume_db = 0.265018
+bus/1/name = &"Music"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -10.5236
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectLimiter_47okw")
+bus/1/effect/0/enabled = false
+bus/2/name = &"SFX"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = -7.27252
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectReverb_n2u6d")
+bus/2/effect/0/enabled = true
+bus/3/name = &"PlayerSFX"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = -15.1981
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectHighPassFilter_sew7y")
+bus/3/effect/0/enabled = false
+bus/3/effect/1/effect = SubResource("AudioEffectHighShelfFilter_gu23m")
+bus/3/effect/1/enabled = false
+bus/3/effect/2/effect = SubResource("AudioEffectEQ6_xvtgu")
+bus/3/effect/2/enabled = true
+bus/4/name = &"Jump"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = -15.795
+bus/4/send = &"Master"
+bus/4/effect/0/effect = SubResource("AudioEffectHighShelfFilter_u4p2t")
+bus/4/effect/0/enabled = true
+bus/5/name = &"Misc"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = -4.00569
+bus/5/send = &"Master"
+bus/5/effect/0/effect = SubResource("AudioEffectReverb_2wgbm")
+bus/5/effect/0/enabled = true

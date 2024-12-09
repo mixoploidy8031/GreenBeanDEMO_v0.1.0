@@ -1,0 +1,147 @@
+[gd_scene load_steps=28 format=3 uid="uid://chf7s7a6ce0nx"]
+
+[ext_resource type="Script" path="res://scripts/beachball.gd" id="1_af10o"]
+[ext_resource type="Texture2D" uid="uid://iv6qd5m63eea" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_F_1.png" id="1_pkhhw"]
+[ext_resource type="Texture2D" uid="uid://bg2c1dkg5yef" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_F_4.png" id="2_j18gx"]
+[ext_resource type="Texture2D" uid="uid://bgu1uku34qk71" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_R_1.png" id="3_e3x2b"]
+[ext_resource type="Texture2D" uid="uid://c4yfm12p6ooxu" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_R_2.png" id="4_ee2mb"]
+[ext_resource type="Texture2D" uid="uid://0mjmlycsk35d" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_R_3.png" id="5_8kmbx"]
+[ext_resource type="Texture2D" uid="uid://cwmty3208mbww" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_R_4.png" id="6_sio0m"]
+[ext_resource type="PackedScene" uid="uid://bm3vgi36vdg00" path="res://scenes/killzone.tscn" id="7_n6u16"]
+[ext_resource type="Texture2D" uid="uid://dn5vgr8rugpvt" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_1.png" id="8_8q3qe"]
+[ext_resource type="Texture2D" uid="uid://deo2ui7i20a17" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Walk_2/Walk_2_R_1.png" id="8_qwong"]
+[ext_resource type="Texture2D" uid="uid://c2d1440s80jul" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_2.png" id="9_pbvek"]
+[ext_resource type="Texture2D" uid="uid://c0kn5rncrjest" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Walk_2/Walk_2_R_2.png" id="9_tcus6"]
+[ext_resource type="Texture2D" uid="uid://pf273un6u0ca" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_3.png" id="10_dd581"]
+[ext_resource type="Texture2D" uid="uid://dcls7ddree1g8" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Walk_2/Walk_2_R_3.png" id="10_f78g1"]
+[ext_resource type="Texture2D" uid="uid://bhwx7rrljeeyu" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_4.png" id="11_10qca"]
+[ext_resource type="Texture2D" uid="uid://cm5jcmgtyxe3r" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Walk_2/Walk_2_R_4.png" id="11_coxd0"]
+[ext_resource type="Texture2D" uid="uid://dwrfj1jwwcm3i" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_5.png" id="12_qhr5p"]
+[ext_resource type="Texture2D" uid="uid://duda1twpyxrop" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_6.png" id="13_si8bx"]
+[ext_resource type="Texture2D" uid="uid://baocb1ryhhpnd" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_7.png" id="14_i8lrj"]
+[ext_resource type="Texture2D" uid="uid://dapqljc3h6ow2" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_8.png" id="15_d267w"]
+[ext_resource type="Texture2D" uid="uid://5qsp8ubia85n" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_9.png" id="16_i7fib"]
+[ext_resource type="Texture2D" uid="uid://b8d67qs0lajf2" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_10.png" id="17_nb0ff"]
+[ext_resource type="Texture2D" uid="uid://b7olf6pu8vr3l" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_11.png" id="18_bscdd"]
+[ext_resource type="Texture2D" uid="uid://dagm1odk4clkx" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/Sprites [Enemies]/Bomb/Explode/Explode_R_12.png" id="19_hood2"]
+[ext_resource type="AudioStream" uid="uid://dfk5c2wmjyegd" path="res://assets/sounds/explosion.wav" id="25_ymc1m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eikkv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pkhhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j18gx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e3x2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ee2mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8kmbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sio0m")
+}],
+"loop": true,
+"name": &"cactus",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_8q3qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pbvek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dd581")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_10qca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qhr5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_si8bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i8lrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_d267w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_i7fib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nb0ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bscdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hood2")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qwong")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tcus6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f78g1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_coxd0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cc13"]
+size = Vector2(10, 12)
+
+[node name="Cactus" type="Node2D"]
+script = ExtResource("1_af10o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_eikkv")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(9, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(-9, 0)
+
+[node name="Killzone" parent="." instance=ExtResource("7_n6u16")]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_5cc13")
+
+[node name="ExplodeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_ymc1m")
+volume_db = -8.0
+bus = &"Misc"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

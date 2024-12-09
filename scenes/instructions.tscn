@@ -1,0 +1,99 @@
+[gd_scene load_steps=27 format=3 uid="uid://dvq73i8qfqt83"]
+
+[ext_resource type="FontFile" uid="uid://dcdcvpqhh54cm" path="res://assets/fonts/bitbybit_ [Font].ttf" id="1_h6x3u"]
+[ext_resource type="Texture2D" uid="uid://bapxl1jyhin8" path="res://assets/fonts/tile_0439.png" id="2_swr4u"]
+[ext_resource type="Texture2D" uid="uid://do8cmq8fkn35f" path="res://assets/fonts/tile_0441.png" id="3_b2uip"]
+[ext_resource type="Texture2D" uid="uid://c0fhef4n2yo74" path="res://assets/fonts/tile_0122.png" id="4_8d656"]
+[ext_resource type="Texture2D" uid="uid://cocpk6tspmjyi" path="res://assets/fonts/tile_0255.png" id="4_bi0eb"]
+[ext_resource type="Texture2D" uid="uid://b1ndj531ya3cf" path="res://assets/fonts/tile_0256.png" id="5_bfsqe"]
+[ext_resource type="Texture2D" uid="uid://en33pff0vf5k" path="res://assets/fonts/tile_0168.png" id="5_cxvoa"]
+[ext_resource type="Texture2D" uid="uid://vsndc1ynkrs4" path="res://assets/fonts/tile_0235.png" id="6_j2qaj"]
+[ext_resource type="Texture2D" uid="uid://b22bg2dc0sdmq" path="res://assets/fonts/tile_0236.png" id="7_m0xwj"]
+[ext_resource type="Texture2D" uid="uid://dtpgy2m0flq54" path="res://assets/fonts/tile_0237.png" id="8_bv2ly"]
+[ext_resource type="Texture2D" uid="uid://kqks8pfeilpv" path="res://assets/fonts/tile_0221.png" id="11_1wc7i"]
+[ext_resource type="Texture2D" uid="uid://d1tikdkgwjhab" path="res://assets/fonts/tile_0222.png" id="12_wn0ly"]
+[ext_resource type="Texture2D" uid="uid://cls7qriccllin" path="res://assets/fonts/tile_0120.png" id="13_2rxn7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f67aw"]
+texture = ExtResource("2_swr4u")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5fnf"]
+texture = ExtResource("3_b2uip")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fu12l"]
+texture = ExtResource("4_8d656")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_roywy"]
+texture = ExtResource("5_cxvoa")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nr2j"]
+texture = ExtResource("4_bi0eb")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y8omb"]
+texture = ExtResource("5_bfsqe")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4essd"]
+texture = ExtResource("6_j2qaj")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7b06"]
+texture = ExtResource("7_m0xwj")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wj4g3"]
+texture = ExtResource("8_bv2ly")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_swc0c"]
+texture = ExtResource("11_1wc7i")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekhph"]
+texture = ExtResource("12_wn0ly")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stnnt"]
+texture = ExtResource("13_2rxn7")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_n0lh7"]
+sources/0 = SubResource("TileSetAtlasSource_f67aw")
+sources/1 = SubResource("TileSetAtlasSource_h5fnf")
+sources/2 = SubResource("TileSetAtlasSource_8nr2j")
+sources/3 = SubResource("TileSetAtlasSource_y8omb")
+sources/4 = SubResource("TileSetAtlasSource_4essd")
+sources/5 = SubResource("TileSetAtlasSource_l7b06")
+sources/6 = SubResource("TileSetAtlasSource_wj4g3")
+sources/7 = SubResource("TileSetAtlasSource_swc0c")
+sources/8 = SubResource("TileSetAtlasSource_ekhph")
+sources/9 = SubResource("TileSetAtlasSource_stnnt")
+sources/10 = SubResource("TileSetAtlasSource_fu12l")
+sources/11 = SubResource("TileSetAtlasSource_roywy")
+
+[node name="IntroInstructions" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -70.0
+offset_top = -96.0
+offset_right = 78.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("1_h6x3u")
+theme_override_font_sizes/font_size = 20
+text = "+
+or
++
+to move"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray(0, 0, 254, 255, 253, 255, 9, 0, 0, 0, 0, 0, 0, 0, 254, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 253, 255, 10, 0, 0, 0, 0, 0, 0, 0, 1, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_n0lh7")

@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsfbedm54c8ts"]
+
+[ext_resource type="FontFile" uid="uid://dcdcvpqhh54cm" path="res://assets/fonts/bitbybit_ [Font].ttf" id="1_ank2l"]
+
+[sub_resource type="Animation" id="Animation_1xhxs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8e81g"]
+resource_name = "Title_grow"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(3.86374, 3.86374),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="Animation" id="Animation_a4su1"]
+resource_name = "shake"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0523599, -0.0523599, 0.0523599, -0.0523599, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_21oei"]
+_data = {
+"RESET": SubResource("Animation_1xhxs"),
+"Title_grow": SubResource("Animation_8e81g"),
+"shake": SubResource("Animation_a4su1")
+}
+
+[node name="TitleReal" type="Node2D"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -444.0
+offset_top = -149.998
+offset_right = 444.0
+offset_bottom = -65.998
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="MarginContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.34902, 0.701961, 0.176471, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("1_ank2l")
+theme_override_font_sizes/font_size = 60
+text = "Grubby Gobblin'"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_21oei")
+}
+autoplay = "Title_grow"

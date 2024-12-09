@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0nee3yow5bmb"]
+
+[ext_resource type="Texture2D" uid="uid://chdo6u8u77eqx" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/midground_/summer_.png" id="1_mwklx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxxta"]
+size = Vector2(30, 8)
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mwklx")
+region_enabled = true
+region_rect = Rect2(144, 248, 32, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uxxta")
