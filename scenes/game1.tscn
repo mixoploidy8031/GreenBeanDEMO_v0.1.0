@@ -2458,6 +2458,7 @@ offset_left = -764.0
 offset_top = -60.0
 offset_right = -519.0
 offset_bottom = -12.0
+mouse_filter = 1
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("20_kxmcn")
 theme_override_font_sizes/font_size = 10
@@ -2488,7 +2489,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
 [node name="Coinsdonesound" type="AudioStreamPlayer2D" parent="Player"]

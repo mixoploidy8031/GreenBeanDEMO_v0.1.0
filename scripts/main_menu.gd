@@ -2,7 +2,6 @@ extends Control
 
 @export var tween_intensity: float
 @export var tween_duration: float
-
 @onready var play: Button = $VBoxContainer/Play
 @onready var options: Button = $VBoxContainer/Options
 @onready var quit: Button = $VBoxContainer/Quit
@@ -12,7 +11,6 @@ extends Control
 @onready var playtimer: Timer = $Timers/Playtimer
 @onready var titlename: CanvasLayer = $titlename
 @onready var animation_player: AnimationPlayer = $VBoxContainer/TitleReal/AnimationPlayer
-
 
 var timer_duration: float = 2.5
 

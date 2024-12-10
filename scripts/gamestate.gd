@@ -10,6 +10,8 @@ var is_paused = false
 var cannot_move = false
 var alive = true
 
+var pause_menu_scene = preload("res://scenes/options_menu.tscn")
+var pause_menu: CanvasLayer # Instance of the pause menu when it's shown
 
 # DEBUG VARIABLES. DELETE WHEN EXPORTING
 var debug_mode = false
@@ -75,7 +77,26 @@ func pause_game() -> void:
 	freeze_timer()
 	get_tree().paused = true
 	is_paused = true
-	# Show pause menu UI
-	var pause_menu = load("res://scenes/options_menu.tscn").instantiate()
-	#pause_menu.get_node("")
+	pause_menu = pause_menu_scene.instantiate()
+	get_tree().current_scene.add_child(pause_menu)
+	pause_menu.get_node("MainMenuContainer").visible = true
+	pause_menu.get_node("ResetContainer").visible = true
+	
+func resume_game() -> void:
+	if not is_paused:
+		return
+	start_game()
+	get_tree().paused = false
+	is_paused = false
+	# Hide pause menu UI
+	if pause_menu:
+		pause_menu.queue_free()
+
+func _input(event: InputEvent) -> void:
+	if game_started:
+		if event.is_action_pressed("pause"):
+			if is_paused:
+				resume_game()
+			else:
+				pause_game()
 	
