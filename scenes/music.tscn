@@ -6,6 +6,7 @@
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" node_paths=PackedStringArray("background_music")]
 stream = ExtResource("1_v43ci")
+volume_db = 1.0
 pitch_scale = 1.14
 attenuation = 1e-05
 panning_strength = 0.0

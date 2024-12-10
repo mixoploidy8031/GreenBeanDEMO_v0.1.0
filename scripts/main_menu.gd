@@ -7,6 +7,7 @@ extends Control
 @onready var options: Button = $VBoxContainer/Options
 @onready var quit: Button = $VBoxContainer/Quit
 @onready var button_sound: AudioStreamPlayer2D = $"Button Sound"
+@onready var start_sound: AudioStreamPlayer2D = $StartSound
 @onready var fadeto_black: ColorRect = $FadetoBlack
 @onready var playtimer: Timer = $Timers/Playtimer
 @onready var titlename: CanvasLayer = $titlename
@@ -22,7 +23,7 @@ func _on_ready() -> void:
 func _on_start_pressed() -> void:
 	# Called when clicking play
 	Music.menu_music.stop()
-	button_sound.play()
+	start_sound.play()
 	playtimer.start(timer_duration)
 	
 	# Fade to black

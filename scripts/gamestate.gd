@@ -6,8 +6,10 @@ const FINAL_LEVEL_PATH = "res://scenes/game_3.tscn" # Replace with your final le
 @onready var game_started: bool = false
 var start_time: float = 0.0
 var is_level_finished = false # Triggered by level_finish.gd
+var is_paused = false
 var cannot_move = false
 var alive = true
+
 
 # DEBUG VARIABLES. DELETE WHEN EXPORTING
 var debug_mode = false
@@ -66,3 +68,14 @@ func reset():
 func freeze_timer() -> void:
 	game_started = false
 	set_process(false)
+	
+func pause_game() -> void:
+	if is_paused:
+		return # If already paused, do nothing
+	freeze_timer()
+	get_tree().paused = true
+	is_paused = true
+	# Show pause menu UI
+	var pause_menu = load("res://scenes/options_menu.tscn").instantiate()
+	#pause_menu.get_node("")
+	

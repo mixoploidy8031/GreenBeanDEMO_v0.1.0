@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/key.gd" id="1_k568i"]
 [ext_resource type="Texture2D" uid="uid://b10cn8j7xabgj" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/objects_/items_.png" id="1_m71f4"]
-[ext_resource type="AudioStream" uid="uid://blyy3sxno1jtc" path="res://assets/sounds/keys 3.wav" id="3_4hfoj"]
+[ext_resource type="AudioStream" uid="uid://cwv6uy2o6w87k" path="res://assets/sounds/keys7.wav" id="3_mhknx"]
 
 [sub_resource type="Animation" id="Animation_7f8ev"]
 length = 0.001
@@ -154,9 +154,9 @@ libraries = {
 autoplay = "key_float"
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_4hfoj")
-volume_db = -1.0
-attenuation = 0.00182233
+stream = ExtResource("3_mhknx")
+pitch_scale = 1.3
+attenuation = 1e-05
 bus = &"SFX"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
