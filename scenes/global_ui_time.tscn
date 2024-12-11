@@ -8,10 +8,14 @@ script = ExtResource("1_5xa1v")
 
 [node name="Panel" type="Panel" parent="."]
 z_index = 40
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 175.0
-offset_bottom = 75.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.5
+offset_top = 16.0
+offset_right = 83.5
+offset_bottom = 83.0
+grow_horizontal = 2
 scale = Vector2(1.00618, 1.03505)
 mouse_filter = 2
 

@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var master_slider: HSlider = $MarginContainer/VBoxContainer/MasterSlider
 @onready var music_slider: HSlider = $MarginContainer/VBoxContainer/VolumeSlider
 @onready var fullscreen_checkbox: Button = $Panel/MarginContainer/FullscreenCheckbox
+@onready var confirmation_dialog: ConfirmationDialog = $MainMenuContainer/ConfirmationDialog
 
 func _on_ready() -> void:
 	# Load and apply the saved volumes for the Master and Music sliders
@@ -15,24 +16,35 @@ func _on_ready() -> void:
 	music_slider.value = Music.current_volume
 	
 func _on_back_pressed() -> void:
-	if not Gamestate.game_started:
+	if not Gamestate.is_paused:
 		button_sound.play()
 		await button_sound.finished
 		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 	else:
+		button_sound.play()
+		await button_sound.finished
 		Gamestate.resume_game()
-
-# ADD CONFIRMATION SCREEN (Y/N)
-func _on_main_menu_pressed() -> void: 
-	button_sound.play()
-	await button_sound.finished
-	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 
 # ADD CODE TO RESET LEVEL
 func _on_reset_level_pressed() -> void:
 	button_sound.play()
 	await button_sound.finished
-	pass # Replace with function body.
+	Gamestate.reset_level()
+
+func _on_main_menu_pressed() -> void: 
+	button_sound.play()
+	confirmation_dialog.popup_centered()
+
+func _on_confirmation_yes_pressed() -> void:
+	#Music.background_music.stop()
+	button_sound.play()
+	await button_sound.finished
+	Gamestate.exit_to_main_menu()
+
+func _on_confirmation_no_pressed() -> void:
+	button_sound.play()
+	await button_sound.finished
+	confirmation_dialog.hide()
 
 func _on_music_slider_value_changed(value: float) -> void:
 	if Music:

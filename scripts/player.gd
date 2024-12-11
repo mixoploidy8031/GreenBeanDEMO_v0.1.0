@@ -54,6 +54,9 @@ func change_skin(index: int) -> void:
 		_set_active_skin(active_skin_index)
 
 func _physics_process(delta: float) -> void:
+	if Gamestate.is_paused:
+		return # Block all player logic while paused
+	
 	# Death handling
 	if not Gamestate.alive and not has_died:
 		_handle_death()

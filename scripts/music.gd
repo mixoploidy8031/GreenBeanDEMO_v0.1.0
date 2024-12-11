@@ -6,12 +6,11 @@ extends AudioStreamPlayer2D
 
 var current_volume: float = default_volume
 
-
-
 func _ready() -> void:
 	await ConfigManager.ready
 	load_volume()
 	set_volume(current_volume)
+
 
 func set_volume(volume: float) -> void:
 	current_volume = volume

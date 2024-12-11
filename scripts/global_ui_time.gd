@@ -11,7 +11,7 @@ func _on_ready() -> void:
 
 func _process(delta: float) -> void:
 	# Timer remains visible if showing final time
-	if Gamestate.game_started:
+	if Gamestate.game_started and not Gamestate.is_final_level:
 		timer_panel.visible = true
 	else:
 		timer_panel.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b7n6qr4dq4pch"]
+[gd_scene load_steps=36 format=3 uid="uid://b7n6qr4dq4pch"]
 
 [ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_7653n"]
 [ext_resource type="Texture2D" uid="uid://dnk230h4ijlyl" path="res://assets/ui_etc/Titlescreencap.png" id="1_be8fa"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cy351inmbmfn3" path="res://assets/ui_etc/tile_0673.png" id="5_26ojj"]
 [ext_resource type="AudioStream" uid="uid://qut1qkp4my8j" path="res://assets/sounds/button processed.wav" id="5_qnakj"]
 [ext_resource type="Texture2D" uid="uid://c7pc6sxdi8ye2" path="res://assets/ui_etc/tile_0716.png" id="7_kxxqt"]
+[ext_resource type="FontFile" uid="uid://cxbrv4pvmvwg6" path="res://assets/fonts/PixelOperator8.ttf" id="7_rd0bj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_excoc"]
+bg_color = Color(0, 0, 0, 0.454902)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xs5yj"]
 texture = ExtResource("1_be8fa")
@@ -153,6 +157,105 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8l5v"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvt30"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.43075, 0.32848, 0.00891391, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.984314, 0.768627, 0.105882, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 5
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdhui"]
+bg_color = Color(0, 0, 0, 0.2)
+draw_center = false
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5ni7"]
+draw_center = false
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nrts"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.43075, 0.32848, 0.00891391, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 5
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="Theme" id="Theme_ccffp"]
+default_font = ExtResource("2_j3v3r")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.34902, 0.701961, 0.176471, 1)
+Button/colors/font_hover_pressed_color = Color(0.2, 0.454902, 0.235294, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.201341, 0.453135, 0.234827, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 8
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("7_rd0bj")
+Button/styles/disabled = SubResource("StyleBoxFlat_r8l5v")
+Button/styles/focus = SubResource("StyleBoxFlat_yvt30")
+Button/styles/hover = SubResource("StyleBoxFlat_sdhui")
+Button/styles/normal = SubResource("StyleBoxFlat_v5ni7")
+Button/styles/pressed = SubResource("StyleBoxFlat_3nrts")
+Label/colors/font_color = Color(0.662745, 0.694118, 0.682353, 1)
+Label/fonts/font = ExtResource("7_rd0bj")
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4234n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixn4k"]
@@ -190,7 +293,19 @@ shadow_size = 8
 shadow_offset = Vector2(3, 3)
 
 [node name="OptionsMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_7653n")
+
+[node name="DarkTint" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_excoc")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
@@ -198,7 +313,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xs5yj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -208,9 +325,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.0
-offset_top = -420.0
+offset_top = -396.0
 offset_right = 256.0
-offset_bottom = -268.0
+offset_bottom = -244.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -336,7 +453,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_agc4h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gax8w")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dotm5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1v6vh")
-shortcut = SubResource("Shortcut_me31p")
 shortcut_in_tooltip = false
 icon = ExtResource("5_26ojj")
 icon_alignment = 1
@@ -397,11 +513,26 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_cmkd0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a6cr2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nju7t")
 theme_override_styles/normal = SubResource("StyleBoxFlat_k6kxm")
-shortcut = SubResource("Shortcut_me31p")
 shortcut_in_tooltip = false
 text = "Main Menu"
 icon = ExtResource("7_kxxqt")
 expand_icon = true
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="MainMenuContainer"]
+title = "Quit to Main Menu"
+initial_position = 1
+size = Vector2i(350, 100)
+exclusive = false
+unresizable = true
+popup_window = true
+min_size = Vector2i(350, 100)
+max_size = Vector2i(1920, 1080)
+theme = SubResource("Theme_ccffp")
+ok_button_text = "Yes "
+dialog_text = "        
+          Are you sure? "
+dialog_hide_on_ok = false
+cancel_button_text = "No "
 
 [node name="FullscreenContainer" type="MarginContainer" parent="."]
 visible = false
@@ -448,3 +579,5 @@ bus = &"SFX"
 [connection signal="pressed" from="BackMarginContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ResetContainer/ResetLevel" to="." method="_on_reset_level_pressed"]
 [connection signal="pressed" from="MainMenuContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="canceled" from="MainMenuContainer/ConfirmationDialog" to="." method="_on_confirmation_no_pressed"]
+[connection signal="confirmed" from="MainMenuContainer/ConfirmationDialog" to="." method="_on_confirmation_yes_pressed"]
