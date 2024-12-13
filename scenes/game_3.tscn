@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://ckf3bpoem6rb3"]
+[gd_scene load_steps=36 format=4 uid="uid://ckf3bpoem6rb3"]
 
 [ext_resource type="PackedScene" uid="uid://cghiupok35rqy" path="res://scenes/player.tscn" id="1_1voeb"]
 [ext_resource type="Texture2D" uid="uid://correl68g4ys2" path="res://assets/sprites/fourSeasonsPlatformer_ [tileset, version 2.0]/midground_/winter_.png" id="2_q7vvr"]
@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://dcdcvpqhh54cm" path="res://assets/fonts/bitbybit_ [Font].ttf" id="7_cj3m6"]
 [ext_resource type="PackedScene" uid="uid://bm3vgi36vdg00" path="res://scenes/killzone.tscn" id="8_q5ivy"]
 [ext_resource type="PackedScene" uid="uid://kx10u4oxaqbv" path="res://scenes/platbouncetest.tscn" id="9_fbont"]
-[ext_resource type="AudioStream" uid="uid://p4rarnd20aro" path="res://assets/sounds/gargooyle trapdrill 1.wav" id="10_2h38e"]
+[ext_resource type="PackedScene" uid="uid://ce3e5qvet88eu" path="res://scenes/detect_player_collision.tscn" id="10_ncm2b"]
 [ext_resource type="PackedScene" uid="uid://cv2bdulyimdqo" path="res://scenes/Key.tscn" id="12_f5uk3"]
 [ext_resource type="PackedScene" uid="uid://dtoaqp2ipj6e5" path="res://scenes/balloon.tscn" id="13_gx0qg"]
 
@@ -1063,6 +1063,9 @@ _data = {
 "fade": SubResource("Animation_ry0xn")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxk27"]
+size = Vector2(168, 24)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0q7x"]
 size = Vector2(16, 896)
 
@@ -1123,7 +1126,7 @@ tile_map_data = PackedByteArray("AADw/wUAAAADAAUAAADw/wYAAAADAAYAAADx/wUAAAADAAU
 tile_set = SubResource("TileSet_pr2lq")
 
 [node name="Blackout" type="TileMapLayer" parent="TileMaps"]
-z_index = 5
+z_index = 2
 tile_map_data = PackedByteArray("AAD7//3/AAABAAEAAAD6//z/AAABAAIAAAD6//3/AAAAAAEAAAD7//z/AAABAAAAAAD8//r/AAACAAEAAAD///r/AAACAAEAAAD+//r/AAAAAAAAAAD7//r/AAACAAEAAAD9//r/AAABAAAAAAD7////AAABAAAAAAD+////AAABAAAAAAD9////AAAAAAAAAAD+/wAAAAABAAEAAAD9/wAAAAAAAAEAAAD//wAAAAAAAAEAAAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAAAAP//AAACAAEAAAABAP//AAACAAEAAAACAP//AAABAAAAAAACAAAAAAABAAEAAAADAP//AAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AAAAAAEAAAD9//3/AAAAAAEAAAD9//z/AAAAAAAAAAD+//z/AAABAAAAAAD+//3/AAABAAEAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAEAAAABAPz/AAABAAAAAAABAP3/AAABAAEAAAD6////AAAAAAAAAAADAAAAAAAAAAEAAAAEAAAAAAACAAAAAAAAAPr/AAABAAAAAAABAPr/AAAAAAAAAAACAPr/AAACAAEAAAADAPr/AAACAAEAAAD6//v/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_5qgjv")
 
@@ -1180,6 +1183,14 @@ position = Vector2(258, 12)
 [node name="platbouncetest3" parent="platforms" instance=ExtResource("9_fbont")]
 position = Vector2(225, 4)
 
+[node name="Detect_Player_Collision" parent="platforms/platbouncetest3" instance=ExtResource("10_ncm2b")]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/platbouncetest3/Detect_Player_Collision"]
+position = Vector2(66, -3)
+shape = SubResource("RectangleShape2D_jxk27")
+
 [node name="platbouncetest4" parent="platforms" instance=ExtResource("9_fbont")]
 position = Vector2(324, 12)
 
@@ -1215,14 +1226,8 @@ collision_mask = 2
 position = Vector2(200, 192)
 shape = SubResource("WorldBoundaryShape2D_hegym")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_2h38e")
-attenuation = 1e-05
-panning_strength = 0.0
-bus = &"Music"
-
 [node name="Fake Key" parent="." instance=ExtResource("12_f5uk3")]
 position = Vector2(440, -248)
 
 [node name="Balloon" parent="." instance=ExtResource("13_gx0qg")]
-position = Vector2(312, -656)
+position = Vector2(312, -408)

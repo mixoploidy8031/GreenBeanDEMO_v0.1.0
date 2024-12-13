@@ -15,6 +15,7 @@ var alive = true
 var default_music_pitch: float = 1.14
 var pause_menu: CanvasLayer # Instance of the pause menu when it's shown
 var last_pause_time: float = 0.0
+var can_pause = false
 
 var debug_mode = false
 var is_invincible = false 
@@ -43,6 +44,7 @@ func start_game() -> void:
 	# Apply the music volume right after starting the game
 	Music.play_game_music()
 	
+	can_pause = true
 	game_started = true
 	start_time = 0 
 	set_process(true) # Start updating timer
@@ -91,8 +93,8 @@ func freeze_timer() -> void:
 func pause_game() -> void:
 	if is_paused or not alive or (pause_menu and pause_menu != null):
 		return 
-	Engine.time_scale = 0
-	is_paused = true	
+	Engine.time_scale = (0.0001 ** 3)
+	is_paused = true
 	
 	# Add pause scene as a child to current scene and hide/enable proper nodes
 	pause_menu = pause_menu_scene.instantiate()
@@ -105,6 +107,7 @@ func resume_game() -> void:
 	if not is_paused:
 		return 
 	is_paused = false
+	#can_pause = true
 	Engine.time_scale = 1
 
 	
@@ -116,6 +119,7 @@ func resume_game() -> void:
 func exit_to_main_menu() -> void:
 	# Reset game state
 	reset()
+	can_pause = false
 	game_started = false
 	is_paused = false
 	is_final_level = false
@@ -136,6 +140,7 @@ func reset_level() -> void:
 	var current_scene_path = get_tree().current_scene.scene_file_path
 	get_tree().change_scene_to_file(current_scene_path)
 	
+	can_pause = true
 	start_time = 0
 	reset()
 	resume_game()
@@ -147,8 +152,9 @@ func reset_level() -> void:
 
 func _input(event: InputEvent) -> void:
 	if game_started and alive and event.is_action_pressed("pause") and (Time.get_ticks_msec() - last_pause_time) > PAUSE_COOLDOWN * 1000:
-		last_pause_time = Time.get_ticks_msec()
-		if is_paused:
-			resume_game()
-		else:
-			pause_game()
+			last_pause_time = Time.get_ticks_msec()
+			if is_paused:
+				resume_game()
+			else:
+				if can_pause:
+					pause_game()

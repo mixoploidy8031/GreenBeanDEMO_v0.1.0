@@ -39,7 +39,7 @@ var is_crouched = false
 func _on_ready() -> void:
 	hurt_sound_1.connect("finished", Callable(self, "_on_death_sound_finished"))
 	hurt_sound_2.connect("finished", Callable(self, "_on_death_sound_finished"))
-	
+
 	_set_active_skin(active_skin_index)
 
 func _set_active_skin(index: int) -> void:

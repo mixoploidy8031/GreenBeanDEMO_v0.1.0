@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://by35g5svm6b1u"]
+[gd_scene load_steps=85 format=4 uid="uid://by35g5svm6b1u"]
 
 [ext_resource type="PackedScene" uid="uid://cghiupok35rqy" path="res://scenes/player.tscn" id="1_26g6g"]
 [ext_resource type="PackedScene" uid="uid://bm3vgi36vdg00" path="res://scenes/killzone.tscn" id="1_py0qc"]
@@ -24,6 +24,7 @@
 [ext_resource type="FontFile" uid="uid://dcdcvpqhh54cm" path="res://assets/fonts/bitbybit_ [Font].ttf" id="20_kxmcn"]
 [ext_resource type="Script" path="res://scripts/move_fall_enter.gd" id="21_6mrsr"]
 [ext_resource type="PackedScene" uid="uid://byp7bqyn8yng2" path="res://scenes/sign_double.tscn" id="23_wp0pn"]
+[ext_resource type="PackedScene" uid="uid://ce3e5qvet88eu" path="res://scenes/detect_player_collision.tscn" id="24_nc2gm"]
 [ext_resource type="PackedScene" uid="uid://chfeobu8nfr41" path="res://scenes/slime.tscn" id="26_f3gct"]
 [ext_resource type="PackedScene" uid="uid://cv2bdulyimdqo" path="res://scenes/Key.tscn" id="27_dmbc4"]
 [ext_resource type="PackedScene" uid="uid://boh616qq5a5ls" path="res://scenes/jumpintro.tscn" id="28_033hj"]
@@ -2185,6 +2186,9 @@ _data = {
 "platmoveright": SubResource("Animation_vi0gr")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwo2f"]
+size = Vector2(32, 7.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdrr2"]
 size = Vector2(28, 12)
 
@@ -2552,8 +2556,13 @@ tile_set = SubResource("TileSet_gexvu")
 use_kinematic_bodies = true
 
 [node name="Blackout" type="TileMapLayer" parent="TileMaps"]
-z_index = 4
-tile_map_data = PackedByteArray("AADc/wAAAAABAAAAAADe/wAAAAABAAAAAADd/wAAAAAAAAAAAADf/wAAAAAAAAAAAADg/wAAAAABAAAAAADc/wUAAAABAAAAAADb/wUAAAAAAAAAAADb/wQAAAAAAAEAAADb/wMAAAAAAAAAAADc/wMAAAABAAEAAADc/wIAAAABAAAAAADb/wIAAAAAAAEAAADb/wEAAAAAAAAAAADf/wUAAAACAAEAAADd/wUAAAACAAEAAADf/wYAAAAAAAEAAADg/wYAAAABAAEAAAAcAAMAAAABAAEAAAAfAAMAAAAAAAIAAAAfAAQAAAAAAAIAAAAfAAUAAAAAAAIAAAAcAAIAAAACAAEAAAAdAAIAAAACAAEAAAAeAAIAAAACAAEAAAAaAAUAAAAAAAAAAAAbAAIAAAAAAAAAAAAeAAUAAAAAAAAAAAAeAAYAAAAAAAEAAAAcAAYAAAAAAAEAAAAaAAYAAAAAAAEAAAAbAAYAAAABAAEAAAAdAAYAAAABAAEAAAAfAAYAAAABAAEAAAAeAAMAAAAAAAEAAAAfAAIAAAABAAAAAAAaAAMAAAABAAIAAAAaAAQAAAAAAAEAAAAHAAcAAAAAAAEAAAAHAAYAAAABAAIAAAAJAAYAAAAAAAIAAAAJAAUAAAABAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAACAAIAAAAIAAcAAAABAAEAAAA=")
+z_index = 2
+tile_map_data = PackedByteArray("AADc/wAAAAABAAAAAADe/wAAAAABAAAAAADd/wAAAAAAAAAAAADf/wAAAAAAAAAAAADg/wAAAAACAAEAAADc/wUAAAABAAAAAADb/wUAAAAAAAAAAADb/wQAAAAAAAEAAADb/wMAAAAAAAAAAADc/wMAAAABAAEAAADc/wIAAAABAAAAAADb/wIAAAAAAAEAAADb/wEAAAAAAAAAAADf/wUAAAACAAEAAADd/wUAAAACAAEAAADf/wYAAAAAAAEAAADg/wYAAAABAAEAAAAcAAMAAAABAAEAAAAfAAMAAAAAAAIAAAAfAAQAAAAAAAIAAAAfAAUAAAAAAAIAAAAcAAIAAAACAAEAAAAdAAIAAAACAAEAAAAeAAIAAAACAAEAAAAaAAUAAAAAAAAAAAAbAAIAAAAAAAAAAAAeAAUAAAAAAAAAAAAeAAYAAAAAAAEAAAAcAAYAAAAAAAEAAAAaAAYAAAAAAAEAAAAbAAYAAAABAAEAAAAdAAYAAAABAAEAAAAfAAYAAAABAAEAAAAeAAMAAAAAAAEAAAAfAAIAAAABAAAAAAAaAAMAAAABAAIAAAAaAAQAAAAAAAEAAAAHAAcAAAAAAAEAAAAHAAYAAAABAAIAAAAJAAYAAAAAAAIAAAAJAAUAAAABAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAACAAIAAAAIAAcAAAABAAEAAAAIAAAAAAAAAAAAAAAJAAAAAAABAAAAAAAIAAEAAAAAAAEAAAAIAAMAAAAAAAEAAAAIAAIAAAAAAAAAAAAJAAMAAAABAAEAAADh/wMAAAABAAAAAADh/wIAAAABAAEAAADh/wEAAAAAAAIAAADg/wEAAAAAAAEAAADh/wAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_wdiuv")
+
+[node name="Blackout2" type="TileMapLayer" parent="TileMaps"]
+z_index = 5
+tile_map_data = PackedByteArray("AAAgAAIAAAAEAAEAAAAgAAMAAAAEAAEAAAAfAAIAAAAAAAAAAAAfAAQAAAAAAAEAAAAgAAQAAAABAAEAAAAhAAMAAAACAAEAAAAiAAIAAAACAAEAAAAiAAMAAAACAAIAAAAiAAQAAAAAAAEAAAAhAAIAAAACAAAAAAAhAAEAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_wdiuv")
 
 [node name="FakeTerrain" type="TileMapLayer" parent="TileMaps"]
@@ -2948,12 +2957,12 @@ collision_mask = 3
 position = Vector2(192, -12)
 
 [node name="MoveRightEnter" type="Area2D" parent="Platforms/Platform"]
+visible = false
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("18_agdmt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform/MoveRightEnter"]
-visible = false
 position = Vector2(0, -11.75)
 shape = SubResource("RectangleShape2D_lmmjh")
 
@@ -2962,6 +2971,14 @@ libraries = {
 "": SubResource("AnimationLibrary_6emlf")
 }
 
+[node name="Detect_Player_Collision" parent="Platforms/Platform" instance=ExtResource("24_nc2gm")]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform/Detect_Player_Collision"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_bwo2f")
+
 [node name="Platform2" parent="Platforms" instance=ExtResource("19_uttyl")]
 position = Vector2(512, -76)
 
@@ -2969,6 +2986,7 @@ position = Vector2(512, -76)
 position = Vector2(768, 100)
 
 [node name="MoveFallEnter" type="Area2D" parent="Platforms/Platform3"]
+visible = false
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("21_6mrsr")
@@ -2983,6 +3001,14 @@ libraries = {
 }
 next/platmoveshake = &"platmovefall"
 
+[node name="Detect_Player_Collision2" parent="Platforms/Platform3" instance=ExtResource("24_nc2gm")]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform3/Detect_Player_Collision2"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_bwo2f")
+
 [node name="Platform4" parent="Platforms" instance=ExtResource("14_0uhc0")]
 position = Vector2(-256, -420)
 collision_mask = 2
@@ -2992,6 +3018,14 @@ libraries = {
 "": SubResource("AnimationLibrary_k23ra")
 }
 autoplay = "platmove"
+
+[node name="Detect_Player_Collision3" parent="Platforms/Platform4" instance=ExtResource("24_nc2gm")]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform4/Detect_Player_Collision3"]
+position = Vector2(0, -3.25)
+shape = SubResource("RectangleShape2D_bwo2f")
 
 [node name="Signs" type="Node" parent="."]
 

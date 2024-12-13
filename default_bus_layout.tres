@@ -6,7 +6,7 @@ threshold_db = -4.7
 
 [sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_gmcle"]
 resource_name = "Amplify"
-volume_db = -13.4
+volume_db = -12.5
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n2u6d"]
 resource_name = "Reverb"
