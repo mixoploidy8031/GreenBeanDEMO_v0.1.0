@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var timer: Timer = $Timer
-#@onready var player: CharacterBody2D = $"../../../Player"
 
 var timer_duration: float = 1.0 # Duration for the timer (IF NOT EQUAL TO GAMESTATE FADE DURATION ONE WILL COMPLETE BEFORE THE OTHER)
 

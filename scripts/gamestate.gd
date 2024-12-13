@@ -16,7 +16,6 @@ var default_music_pitch: float = 1.14
 var pause_menu: CanvasLayer # Instance of the pause menu when it's shown
 var last_pause_time: float = 0.0
 
-
 var debug_mode = false
 var is_invincible = false 
 
@@ -35,16 +34,13 @@ func _process(delta: float) -> void:
 # Call this when the first level is loaded
 func start_game() -> void:
 	if not ConfigManager.ready:
-		print ("[GameState] Waiting for ConfigManager to be ready...")
 		await ConfigManager.ready
-	print ("[GameState] ConfigManager is ready!")
 	
 	# Apply the master volume right after starting the game
 	var master_volume = ConfigManager.get_value("audio", "master_volume", 0)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), master_volume)
 	
 	# Apply the music volume right after starting the game
-	#var music_volume = ConfigManager.get_value("audio", "music_volume", 0)
 	Music.play_game_music()
 	
 	game_started = true
@@ -136,20 +132,9 @@ func exit_to_main_menu() -> void:
 	ConfigManager.save_config()
 
 func reset_level() -> void:
-	# Trigger fade to black !!NOT WORKING AT THE MOMENT!!
-	#var fade_tween = create_tween()
-	#fade_tween.tween_property(
-		#fadeto_black,
-		#"modulate:a", # Modify the alpha channel
-		#1.0, # Fully opaque
-		#1.5  
-	#)
-	#await fade_tween.finished
-	
 	# Reload the current scene
 	var current_scene_path = get_tree().current_scene.scene_file_path
 	get_tree().change_scene_to_file(current_scene_path)
-	#get_tree().reload_current_scene()
 	
 	start_time = 0
 	reset()

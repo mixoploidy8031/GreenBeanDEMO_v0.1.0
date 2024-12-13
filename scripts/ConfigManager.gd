@@ -8,10 +8,8 @@ var config: ConfigFile = ConfigFile.new()
 var volume_dirty = false
 
 func _ready() -> void:
-	print ("[ConfigManager] _ready() called, loading config...")
 	load_config()
 	emit_signal("ready")
-	print ("[ConfigManager] Config is ready")
 	
 	# Apply master volume from the config on game start
 	var master_volume = get_value("audio", "master_volume", DEFAULT_MASTER_VOLUME)

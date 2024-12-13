@@ -26,14 +26,12 @@ func play_menu_music() -> void:
 	if menu_music:
 		set_volume(current_volume)
 		menu_music.play()
-		print ("[Music] Playing menu music. Volume:", current_volume)
 		
 func load_volume() -> void:
 	current_volume = ConfigManager.get_value("audio", "music_volume", 0)
 	if current_volume < -80:
 		current_volume = 0
 	set_volume(current_volume)
-	print ("Music Volume:", current_volume)
 
 func set_volume(volume: float) -> void:
 	if volume != null and volume != current_volume:
@@ -43,9 +41,7 @@ func set_volume(volume: float) -> void:
 			background_music.volume_db = current_volume
 		if menu_music:
 			menu_music.volume_db = current_volume
-		print ("[Music] Current volume is: ", current_volume)
 
 func save_volume() -> void:
-	print ("[Music] Saving volume to config. Current Volume:", current_volume)
 	ConfigManager.set_value("audio", "volume", current_volume)
 	ConfigManager.save_config()

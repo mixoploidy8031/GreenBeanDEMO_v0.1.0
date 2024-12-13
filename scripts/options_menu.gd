@@ -19,7 +19,6 @@ func _on_ready() -> void:
 
 # Load slider values from config and apply them
 func _on_config_ready() -> void:
-	print ("[OptionsMenu] Config is ready. Loading volumes...")
 	var music_volume = ConfigManager.get_value("audio", "music_volume", 0)
 	Music.set_volume(music_volume)
 	music_slider.value = music_volume
@@ -60,7 +59,6 @@ func _on_master_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(MASTER_BUS, value)
 
 func _on_master_slider_drag_ended(value_changed: bool) -> void:
-	print ("[OptionsMenu] Slider drag ended. Marking volume as dirty and saving config")
 	var volume = master_slider.value
 	ConfigManager.set_value("audio", "master_volume", volume)
 	ConfigManager.save_config()
@@ -73,4 +71,3 @@ func _on_volume_slider_drag_ended(value_changed: bool) -> void:
 	Music.set_volume(volume)
 	ConfigManager.set_value("audio", "music_volume", volume)
 	ConfigManager.save_config()
-	print ("[OptionsMenu] Music Volume set to:", volume)
