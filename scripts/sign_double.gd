@@ -13,8 +13,8 @@ var hint_shown: bool = false # Track if the hint has already been shown
 # Ensure the label is hidden initially
 func _on_ready() -> void:
 	label.visible = false
-	exit_timer.connect("timeout", Callable(self, "_on_exit_timer_timeout"))
-	enter_timer.connect("timeout", Callable(self, "_on_enter_timer_timeout"))
+	#exit_timer.connect("timeout", Callable(self, "_on_exit_timer_timeout"))
+	#enter_timer.connect("timeout", Callable(self, "_on_enter_timer_timeout"))
 	animation_player.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 # Triggered when the player enters the collision area

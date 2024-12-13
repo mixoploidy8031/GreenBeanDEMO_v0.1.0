@@ -6,13 +6,6 @@ const JUMP_VELOCITY = -300.0
 const MAX_JUMPS = 2
 const COYOTE_TIME = 0.2
 
-@onready var animated_sprites = [
-	$AnimatedSprite2D,
-	$AnimatedSprite_Boy,
-]
-
-var active_skin_index = 0
-
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dust_fx: AnimatedSprite2D = $DustFX
 @onready var jump_sound: AudioStreamPlayer2D = $Sounds/JumpSound
@@ -22,7 +15,12 @@ var active_skin_index = 0
 @onready var hurt_sound_1: AudioStreamPlayer2D = $Sounds/HurtSound
 @onready var hurt_sound_2: AudioStreamPlayer2D = $Sounds/HurtSound2
 @onready var edge_ray: RayCast2D = $EdgeRay
+@onready var animated_sprites = [
+	$AnimatedSprite2D,
+	$AnimatedSprite_Boy,
+]
 
+var active_skin_index = 0
 var jumps_remaining = MAX_JUMPS
 var coyote_timer = 0.0 
 var in_air = false 
@@ -34,9 +32,9 @@ var safe_landing = true
 var is_crouched = false
 
 # DEBUG VARIABLES. DELETE WHEN EXPORTING
-var teleport_target = null
-var teleport_speed = 200
-var invincibility = false
+#var teleport_target = null
+#var teleport_speed = 200
+#var invincibility = false
 
 func _on_ready() -> void:
 	hurt_sound_1.connect("finished", Callable(self, "_on_death_sound_finished"))
@@ -83,31 +81,29 @@ func _physics_process(delta: float) -> void:
 	_handle_horizontal_movement()
 	_update_animation()
 	
-	_handle_debug()
+	#_handle_debug()
 
 	# Move and slide
 	move_and_slide()
 
-func _handle_debug():
-	if Input.is_action_pressed("debug_mode") and not Gamestate.debug_mode:
-		Gamestate.debug_mode = true
-		print ("Debug Mode ON")
-		Gamestate.start_game()
-	
-	if Gamestate.debug_mode:
-		if Input.is_action_pressed("level_complete"):
-			Gamestate.level_complete()
-			print ("Cheat Activated: Level Complete!")
-		if Input.is_action_pressed("click_debug"):
-			teleport_target = get_global_mouse_position()
-			velocity = position.direction_to(get_global_mouse_position()) * teleport_speed
-		if Input.is_action_just_pressed("invincibility") and not Gamestate.is_invincible:
+#func _handle_debug():
+	#if Input.is_action_pressed("debug_mode") and not Gamestate.debug_mode:
+		#Gamestate.debug_mode = true
+		#print ("Debug Mode ON")
+		#Gamestate.start_game()
+	#if Gamestate.debug_mode:
+		#if Input.is_action_pressed("level_complete"):
+			#Gamestate.level_complete()
+			#print ("Cheat Activated: Level Complete!")
+		#if Input.is_action_pressed("click_debug"):
+			#teleport_target = get_global_mouse_position()
+			#velocity = position.direction_to(get_global_mouse_position()) * teleport_speed
+		#if Input.is_action_just_pressed("invincibility") and not Gamestate.is_invincible:
 			#Gamestate.is_invincible = true
 			#print ("Invincibility = ON")
 		#else:
 			#Gamestate.is_invincible = false
 			#print ("Invincibility = OFF")
-			pass
 
 func _handle_crouch():
 	if Input.is_action_pressed("crouch"):

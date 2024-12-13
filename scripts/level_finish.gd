@@ -3,7 +3,7 @@ extends Area2D
 @onready var player: CharacterBody2D = $"../Player"
 @onready var timer: Timer = $Timer
 @onready var finish_sound: AudioStreamPlayer2D = $LevelFinishSound
-@onready var fadeto_black: Control = $"../FadetoBlack"
+#@onready var fadeto_black: Control = $"../FadetoBlack"
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and not Gamestate.is_level_finished:

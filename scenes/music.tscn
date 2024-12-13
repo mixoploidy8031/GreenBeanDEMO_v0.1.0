@@ -4,15 +4,14 @@
 [ext_resource type="Script" path="res://scripts/music.gd" id="2_vwipb"]
 [ext_resource type="AudioStream" uid="uid://bkj7kftki7f1b" path="res://assets/sounds/mainmenumaster1 98bpm.wav" id="3_42w5t"]
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" node_paths=PackedStringArray("background_music")]
+[node name="BackgroundMusic" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_v43ci")
-volume_db = 1.0
+volume_db = 4.0
 pitch_scale = 1.14
 attenuation = 1e-05
 panning_strength = 0.0
 bus = &"Music"
 script = ExtResource("2_vwipb")
-background_music = NodePath(".")
 
 [node name="MenuMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_42w5t")

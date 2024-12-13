@@ -13,8 +13,8 @@ modulate_color = Color(0.666569, 0.666569, 0.666569, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41yd4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvs0h"]
-bg_color = Color(0.753863, 0.583287, 0.0249879, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2uw8h"]
+bg_color = Color(0.412587, 0.314148, 0.0081919, 1)
 skew = Vector2(0.2, 0)
 border_color = Color(0.984314, 0.768627, 0.105882, 1)
 corner_radius_top_left = 15
@@ -25,8 +25,8 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 8
 shadow_offset = Vector2(3, 3)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2uw8h"]
-bg_color = Color(0.412587, 0.314148, 0.0081919, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvs0h"]
+bg_color = Color(0.753863, 0.583287, 0.0249879, 1)
 skew = Vector2(0.2, 0)
 border_color = Color(0.984314, 0.768627, 0.105882, 1)
 corner_radius_top_left = 15
@@ -220,6 +220,7 @@ theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8bx1g")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_41yd4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2uw8h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nvs0h")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2uw8h")
 theme_override_styles/normal = SubResource("StyleBoxFlat_uoyog")
@@ -248,10 +249,12 @@ theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8bx1g")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ikqqm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_uoyog")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nvs0h")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2uw8h")
 theme_override_styles/normal = SubResource("StyleBoxFlat_uoyog")
 shortcut = SubResource("Shortcut_he7d0")
+shortcut_feedback = false
 shortcut_in_tooltip = false
 text = "Options"
 

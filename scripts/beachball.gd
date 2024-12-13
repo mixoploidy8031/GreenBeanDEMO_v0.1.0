@@ -8,7 +8,7 @@ var direction = 1
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var killzone: Area2D = $Killzone
-@onready var fadeto_black: ColorRect = $Player/FadetoBlack
+#@onready var fadeto_black: ColorRect = $Player/FadetoBlack
 @onready var explode_sound: AudioStreamPlayer2D = $ExplodeSound
 
 func _ready() -> void:

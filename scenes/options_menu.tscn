@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b7n6qr4dq4pch"]
+[gd_scene load_steps=34 format=3 uid="uid://b7n6qr4dq4pch"]
 
 [ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_7653n"]
 [ext_resource type="Texture2D" uid="uid://dnk230h4ijlyl" path="res://assets/ui_etc/Titlescreencap.png" id="1_be8fa"]
@@ -32,8 +32,8 @@ shadow_size = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g448x"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jfd6"]
-bg_color = Color(0.753863, 0.583287, 0.0249879, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6o8a"]
+bg_color = Color(0.412587, 0.314148, 0.0081919, 1)
 skew = Vector2(0.2, 0)
 border_color = Color(0.984314, 0.768627, 0.105882, 1)
 corner_radius_top_left = 15
@@ -44,8 +44,8 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 8
 shadow_offset = Vector2(3, 3)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6o8a"]
-bg_color = Color(0.412587, 0.314148, 0.0081919, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jfd6"]
+bg_color = Color(0.753863, 0.583287, 0.0249879, 1)
 skew = Vector2(0.2, 0)
 border_color = Color(0.984314, 0.768627, 0.105882, 1)
 corner_radius_top_left = 15
@@ -77,20 +77,6 @@ events = [SubResource("InputEventKey_8m8ah")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agc4h"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gax8w"]
-bg_color = Color(0.287314, 0.3083, 0.378436, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.175627, 0.196102, 0.257686, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 5
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(3, 3)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dotm5"]
 bg_color = Color(0.187408, 0.202881, 0.258712, 1)
 border_width_left = 5
@@ -105,8 +91,22 @@ corner_radius_bottom_left = 8
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(3, 3)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gax8w"]
+bg_color = Color(0.287314, 0.3083, 0.378436, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.175627, 0.196102, 0.257686, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 5
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 3)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1v6vh"]
-bg_color = Color(0.454902, 0.470588, 0.537255, 1)
+bg_color = Color(1, 0.741176, 0.12549, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -118,6 +118,14 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(3, 3)
+
+[sub_resource type="InputEventKey" id="InputEventKey_tk5c8"]
+device = -1
+keycode = 82
+unicode = 114
+
+[sub_resource type="Shortcut" id="Shortcut_xcngj"]
+events = [SubResource("InputEventKey_tk5c8")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cmkd0"]
 
@@ -256,42 +264,6 @@ Button/styles/pressed = SubResource("StyleBoxFlat_3nrts")
 Label/colors/font_color = Color(0.662745, 0.694118, 0.682353, 1)
 Label/fonts/font = ExtResource("7_rd0bj")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4234n"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixn4k"]
-bg_color = Color(0.190321, 0.394703, 0.0937495, 1)
-border_color = Color(0.984314, 0.768627, 0.105882, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 8
-shadow_offset = Vector2(3, 3)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ek6uv"]
-bg_color = Color(0.243137, 0.537255, 0.282353, 1)
-border_color = Color(0.984314, 0.768627, 0.105882, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 8
-shadow_offset = Vector2(3, 3)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rg20l"]
-bg_color = Color(0.984314, 0.768627, 0.105882, 1)
-draw_center = false
-border_color = Color(0.984314, 0.768627, 0.105882, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 8
-shadow_offset = Vector2(3, 3)
-
 [node name="OptionsMenu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_7653n")
@@ -325,9 +297,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.0
-offset_top = -396.0
+offset_top = -340.0
 offset_right = 256.0
-offset_bottom = -244.0
+offset_bottom = -188.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -342,7 +314,7 @@ theme_override_styles/slider = SubResource("StyleBoxFlat_adly5")
 min_value = -80.0
 max_value = 0.0
 rounded = true
-tick_count = 5
+tick_count = 4
 ticks_on_borders = true
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VolumeSlider"]
@@ -360,8 +332,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.34902, 0.701961, 0.176471, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 8
 theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("3_cag2w")
 theme_override_font_sizes/font_size = 30
@@ -373,9 +347,9 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/slider = SubResource("StyleBoxFlat_adly5")
 min_value = -80.0
-max_value = 10.0
+max_value = 0.0
 rounded = true
-tick_count = 5
+tick_count = 4
 ticks_on_borders = true
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MasterSlider"]
@@ -393,8 +367,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.34902, 0.701961, 0.176471, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 8
 theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("3_cag2w")
 theme_override_font_sizes/font_size = 30
@@ -425,6 +401,7 @@ theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_j3v3r")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g448x")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_d6o8a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6jfd6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d6o8a")
 theme_override_styles/normal = SubResource("StyleBoxFlat_uoyog")
@@ -445,14 +422,16 @@ grow_horizontal = 0
 
 [node name="ResetLevel" type="Button" parent="ResetContainer"]
 layout_mode = 2
-tooltip_text = "Resets the level (timer, coins, etc)"
+tooltip_text = "Resets the timer & level (press R)"
 theme_override_colors/icon_pressed_color = Color(0.226707, 0.226707, 0.226707, 1)
 theme_override_fonts/font = ExtResource("2_j3v3r")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxEmpty_agc4h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_dotm5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gax8w")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dotm5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1v6vh")
+shortcut = SubResource("Shortcut_xcngj")
 shortcut_in_tooltip = false
 icon = ExtResource("5_26ojj")
 icon_alignment = 1
@@ -534,37 +513,6 @@ dialog_text = "
 dialog_hide_on_ok = false
 cancel_button_text = "No "
 
-[node name="FullscreenContainer" type="MarginContainer" parent="."]
-visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -512.0
-offset_top = 448.0
-offset_right = -128.0
-offset_bottom = 576.0
-grow_horizontal = 0
-mouse_filter = 2
-
-[node name="FullscreenCheckbox" type="Button" parent="FullscreenContainer"]
-visible = false
-layout_mode = 2
-mouse_filter = 1
-theme_override_colors/font_hover_color = Color(0.662745, 0.694118, 0.682353, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("3_cag2w")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4234n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ixn4k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ek6uv")
-theme_override_styles/normal = SubResource("StyleBoxFlat_rg20l")
-toggle_mode = true
-text = "FULLSCREEN"
-
 [node name="Button Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qnakj")
 volume_db = 1.0
@@ -574,7 +522,9 @@ panning_strength = 0.0
 bus = &"SFX"
 
 [connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VolumeSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/MasterSlider" to="." method="_on_master_slider_drag_ended"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="pressed" from="BackMarginContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ResetContainer/ResetLevel" to="." method="_on_reset_level_pressed"]
